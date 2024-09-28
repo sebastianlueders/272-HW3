@@ -1,5 +1,5 @@
 /*
- * *** YOUR NAME GOES HERE / YOUR SECTION NUMBER ***
+ * *** SEBASTIAN LUEDERS | SECTION-002 ***
  *
  * This java file contains several simple tree problems that need to be
  * codified. These routines  must use the TreeMap and TreeSet library
@@ -21,13 +21,21 @@ public class TreeProblems {
   
   public static Set<Integer> different(Set<Integer> setA, Set<Integer> setB) {
 
+    TreeSet a = new TreeSet();
+    TreeSet b = new TreeSet();
+
+    a.addAll(setA);
+    a.removeAll(setB);
+    b.addAll(setB);
+    b.removeAll(setA);
+    a.addAll(b);
     // INSERT CODE HERE - DO NOT FORGET TO PLACE YOUR NAME ABOVE
     //
     // This can be done numerous ways, but once such will only that
     // *several* lines of code. Hint: create two temporary TreeSets and utilize the
     // methods retainAll(), addAll(), and removeAll(). But in the end, get something to work.
 
-    return setA;
+    return a;
   }
 
 
@@ -40,9 +48,15 @@ public class TreeProblems {
 
   public static void removeEven(Map<Integer, String> treeMap) {
 
-    // INSERT CODE HERE.
+    Iterator<Integer> keys = treeMap.keySet().iterator();
 
-    return;
+    while (keys.hasNext()) {
+      Integer key = keys.next();
+      if (key % 2 == 0) {
+        keys.remove();
+      }
+    }
+
   }
 
 
@@ -55,9 +69,13 @@ public class TreeProblems {
 
   public boolean treesEqual(Map<Integer, String> tree1,Map<Integer, String> tree2 ) {
 
-    // INSERT CODE HERE
+    boolean equal = false;
+    
+    if (tree1.equals(tree2)) {
+      equal = true;
+    }
 
-    return false;
+    return equal;
 
   }
 

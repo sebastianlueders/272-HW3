@@ -1,4 +1,3 @@
-
 /**********************************************************
  *
  * Homework # 3 (Programming Assignment). This assignment has two parts, the first
@@ -59,6 +58,7 @@ public class Main {
         tree.delete(1);
         treeContents = tree.preorderTraversal();
         if ( ! avlErrorFlag && ! treeContents.toString().equals("50 10 5 25 55 53 60 65 ") ) {
+            System.out.println("Incorrect: " + treeContents.toString());
             System.out.println("AVL TEST 1 - Failure (2): deleting leaf failed!");
             avlErrorFlag = true;
         }
